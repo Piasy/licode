@@ -153,6 +153,8 @@ if [ ! -f "$ROOT"/licode_config.js ]; then
     cp "$SCRIPTS"/licode_default.js "$ROOT"/licode_config.js
 fi
 
+sed -i "/recording_path/c\config.erizoController.recording_path = '/webrtc_avconf/';" "$ROOT"/licode_config.js
+
 if [ ! -f "$ROOT"/rtp_media_config.js ]; then
   cp "$SCRIPTS"/rtp_media_config_default.js "$ROOT"/rtp_media_config.js
 fi
